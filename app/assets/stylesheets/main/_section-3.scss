@@ -1,52 +1,115 @@
-.speakers-section{
+.speakers-section {
   background: #F9F9FB;
   padding-top: 156px;
   padding-bottom: 136px;
   overflow: hidden;
+  @include bp(sm) {
+    padding-top: 50px;
+  }
+
+
+  & .speakers-arrows {
+    position: absolute;
+    bottom: -60px;
+    display: none;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+    @include bp(md) {
+      display: flex;
+    }
+
+    & > div {
+      cursor: pointer;
+
+      &:hover {
+        & svg path {
+          stroke: $red;
+        }
+      }
+    }
+  }
+
+  & .slick-slide {
+    & .col-md-4 {
+      @include bp(md) {
+        padding-top: 0;
+        padding-bottom: 35px;
+      }
+    }
+  }
+
+  & .container {
+    position: relative;
+    @include bp(md) {
+      width: 100% !important;
+    }
+
+  }
 }
 
-.speakers-bg{
+.speakers-bg {
   position: absolute;
   top: 100px;
   left: 50%;
   transform: translateX(calc(-50% + 52px));
 }
 
-.bordered-title{
+.bordered-title {
   font-weight: 500;
   font-size: 260px;
   line-height: 250px;
   color: transparent;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #E8E8E9;
+  transition: all ease-in-out 0.2s;
+  @include bp(lg) {
+    font-size: 162px;
+  }
+  @include bp(sm) {
+    font-size: 108px;
+  }
+  @include bp(xs) {
+    font-size: 76px;
+    -webkit-text-stroke-width: 1px;
+  }
 }
 
-.speakers-title__wrapper{
+.speakers-title__wrapper {
   position: relative;
   z-index: 1;
   text-align: center;
   margin-bottom: 60px;
-  .bordered-title{
+
+  .bordered-title {
     position: absolute;
     z-index: -1;
     top: 14px;
     left: 50%;
     transform: translateX(-50%);
+    transition: all ease-in-out 0.2s;
+    @include bp(lg) {
+      top: -44px;
+    }
+    @include bp(xs) {
+      top: -59px;
+    }
   }
 }
 
-.speakers-wrapper{
+.speakers-wrapper {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   z-index: 2;
-  .col-md-3{
-    margin-bottom: 48px;
+  row-gap: 48px;
+
+  .col-md-3 {
     height: inherit;
   }
 }
 
-.speakers-item{
+.speakers-item {
   background: #fff;
   box-shadow: 0 12px 24px rgba(193, 194, 201, 0.25);
   border-radius: 16px;
@@ -54,26 +117,50 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  @include bp(xl) {
+    padding: 36px 24px;
+  }
+  @include bp(sm) {
+    padding: 24px;
+  }
+
 }
 
-.speakers-item__main{
+.speakers-item__main {
   flex: 1 0 auto;
 }
 
-.speakers-item__pic{
+.speakers-item__pic {
   width: 269px;
   height: 269px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 36px;
-  img{
+  -webkit-transition: all ease-in-out 0.2s;
+  -moz-transition: all ease-in-out 0.2s;
+  -ms-transition: all ease-in-out 0.2s;
+  -o-transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
+  @media (max-width: 1640px) {
+    width: 230px;
+    height: 230px;
+  }
+  @include bp(sm) {
+    width: 220px;
+    height: 220px;
+  }
+  @include bp(xs) {
+    margin: 0 auto 20px;
+  }
+
+  img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 }
 
-.speakers-item__title{
+.speakers-item__title {
   display: block;
   text-align: center;
   font-weight: 600;
@@ -81,9 +168,14 @@
   line-height: 48px;
   color: $black;
   margin-bottom: 24px;
+  @include bp(xs) {
+    margin-bottom: 20px;
+    font-size: 27px;
+    line-height: 34px;
+  }
 }
 
-.speakers-item__position{
+.speakers-item__position {
   display: block;
   text-align: center;
   font-weight: 500;
@@ -93,7 +185,7 @@
   margin-bottom: 12px;
 }
 
-.speakers-item__company{
+.speakers-item__company {
   display: block;
   text-align: center;
   font-weight: 600;
@@ -101,41 +193,52 @@
   line-height: 32px;
   color: $black;
   margin-bottom: 24px;
+  @include bp(xs) {
+    margin-bottom: 14px;
+    font-size: 21px;
+  }
 }
 
-.speakers-item__position-bot{
+.speakers-item__position-bot {
   display: block;
   text-align: center;
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
   color: $red;
+  @include bp(xs) {
+    font-size: 21px;
+  }
 }
 
-.speakers-item__socials{
+.speakers-item__socials {
   display: flex;
   justify-content: center;
   margin-top: 24px;
   padding-top: 24px;
   border-top: 2px solid #EEEEEE;
-  >a{
+
+  > a {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 48px;
     margin-right: 20px;
-    &:last-child{
+
+    &:last-child {
       margin-right: 0;
     }
-    &:hover{
-      svg{
-        .fill{
+
+    &:hover {
+      svg {
+        .fill {
           fill: $red;
         }
       }
     }
-    i{
+
+    i {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -146,3 +249,5 @@
     }
   }
 }
+
+

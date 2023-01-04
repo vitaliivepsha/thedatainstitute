@@ -10,19 +10,25 @@
     height: 85px;
     padding: 15px 0;
   }
+
   &.fixed {
     box-shadow: 5px 5px 30px rgba(205, 201, 201, 0.25);
   }
-  .container{
+
+  .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 104px;
     padding: 24px 10px;
+    @include bp(sm) {
+      height: unset;
+      padding: 0 10px;
+    }
   }
 }
 
-.header-left{
+.header-left {
   display: flex;
   align-items: center;
 }
@@ -31,6 +37,7 @@
   display: flex;
   width: 137px;
   height: 49px;
+
   img {
     width: 100%;
     height: 100%;
@@ -42,17 +49,29 @@
   display: flex;
   align-items: center;
   margin-left: 82px;
+  transition: margin-left ease-in-out 0.2s;
+  @media (max-width: 1280px) {
+    margin-left: 28px;
+  }
+
   @include bp(md) {
     display: none;
   }
+
   li {
     margin-right: 44px;
+    transition: margin-right ease-in-out 0.2s;
     @include bp(xxxl) {
       margin-right: 20px;
     }
-    &:last-child{
+    @media (max-width: 1240px) {
       margin-right: 0;
     }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
     a {
       display: block;
       padding: 15px 25px;
@@ -61,6 +80,13 @@
       font-weight: 700;
       font-size: 16px;
       line-height: 24px;
+      @include bp(lg) {
+        padding: 15px;
+      }
+      @media (max-width: 1040px) {
+        padding: 15px 13px;
+      }
+
       &:hover {
         color: $red;
       }
@@ -75,6 +101,14 @@
 
 .header-btn {
   width: 198px;
+  @media (max-width: 1080px) {
+    width: 178px;
+    height: 50px;
+    padding: 0 17px;
+  }
+  @include bp(md) {
+    margin-right: 40px;
+  }
   @include bp(sm) {
     display: none;
   }
@@ -94,6 +128,7 @@
   @include bp(md) {
     display: block;
   }
+
   span {
     display: block;
     position: absolute;
@@ -103,6 +138,7 @@
     height: 3px;
     background: $red;
     transition: background 0.3s;
+
     &:before {
       position: absolute;
       display: block;
@@ -116,6 +152,7 @@
       transition-delay: 0.3s, 0;
       transition-property: top, transform;
     }
+
     &:after {
       position: absolute;
       display: block;
@@ -130,14 +167,17 @@
       transition-property: top, transform;
     }
   }
+
   &.active {
     span {
       background: none;
+
       &:before {
         top: 0;
         transform: rotate(45deg);
         transition-delay: 0, 0.3s;
       }
+
       &:after {
         bottom: 0;
         transform: rotate(-45deg);
@@ -147,7 +187,7 @@
   }
 }
 
-.header-spacer{
+.header-spacer {
   height: 104px;
 }
 
@@ -167,6 +207,7 @@
     top: 60px;
     height: calc(100vh - 60px);
   }
+
   .btn {
     margin: 30px auto 0;
     width: 154px;
@@ -185,6 +226,7 @@
       font-weight: 700;
       font-size: 20px;
       line-height: 22px;
+
       &:hover {
         color: $accent;
       }
