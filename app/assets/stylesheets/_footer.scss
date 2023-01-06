@@ -121,6 +121,9 @@
   right: 0;
   position: fixed;
   z-index: 9;
+  @media only screen and (max-height: 499px){
+    bottom: 50px;
+  }
   @include bp(sm) {
     bottom: 36px;
   }

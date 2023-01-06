@@ -15,8 +15,8 @@
     padding: 10px 0;
   }
   @media only screen and (max-height: 499px){
-    height: 60px;
-    padding: 10px 0;
+    //height: 60px;
+    //padding: 10px 0;
   }
   &.fixed {
     box-shadow: 5px 5px 30px rgba(205, 201, 201, 0.25);
@@ -205,7 +205,7 @@
     height: 60px;
   }
   @media only screen and (max-height: 499px){
-    height: 60px;
+    //height: 60px;
   }
 }
 
@@ -234,12 +234,12 @@
     height: calc(100vh - 60px);
   }
   @media only screen and (max-height: 499px){
-    padding-top: 20px;
-    top: 60px;
-    height: calc(100vh - 60px);
+    //padding-top: 20px;
+    //top: 60px;
+    //height: calc(100vh - 60px);
   }
   .btn {
-    margin: 30px auto 0;
+    margin: 30px auto 80px;
     width: 253px;
     min-height: 56px;
     background-color: #fff;
