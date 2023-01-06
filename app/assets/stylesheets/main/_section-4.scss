@@ -50,24 +50,26 @@
 .join-description {
   font-size: 16px;
   line-height: 24px;
+  font-weight: 500;
   color: #C1C1C1;
-
+  @include bp(xs) {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 30px;
+  }
   * {
     &:last-child {
       margin-bottom: 0;
     }
   }
-
   p {
     margin-bottom: 24px;
   }
-
   ul {
     padding-left: 18px;
     list-style-type: disc;
     margin-bottom: 24px;
   }
-
   ol {
     padding-left: 18px;
     list-style-type: decimal;
@@ -182,6 +184,7 @@
   font-size: 48px;
   line-height: 92px;
   transition: all ease-in-out 0.2s;
+  margin-top: 16px;
   @media (max-width: 1700px) {
     font-size: 41px;
     line-height: 59px;

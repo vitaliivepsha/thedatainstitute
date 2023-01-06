@@ -4,9 +4,9 @@
   padding-top: 214px;
   padding-bottom: 142px;
   @include bp(xs) {
-    padding-bottom: 80px;
-    }
-
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
   &:before {
     position: absolute;
     content: '';
@@ -15,6 +15,10 @@
     left: 0;
     width: 100%;
     background: #F9F9FB;
+    @include bp(xs) {
+      height: 100%;
+      top: 0;
+    }
   }
 }
 
@@ -22,7 +26,7 @@
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(calc(-50% + 5px));
+  transform: translateX(calc(-50% - 7px));
   z-index: 1;
 }
 
@@ -32,10 +36,9 @@
   display: flex;
   align-items: center;
   @include bp(md) {
-      flex-wrap: wrap;
+    flex-wrap: wrap;
     justify-content: center;
-    }
-
+  }
   .bordered-title {
     position: absolute;
     z-index: -1;
@@ -45,23 +48,25 @@
     @include bp(md) {
       top: -172px;
       font-size: 96px;
-      }
-
+    }
+    @include bp(xs) {
+      top: -90px;
+    }
   }
 }
 
 .ticket-left {
   @include bp(md) {
     margin-bottom: 80px;
-    }
+  }
   @include bp(xs) {
     margin-bottom: 50px;
-    }
+  }
   .section-title {
     margin-bottom: 60px;
     @include bp(md) {
       margin-bottom: 23px;
-      }
+    }
   }
 }
 
@@ -70,18 +75,23 @@
   margin-bottom: 16px;
   font-size: 32px;
   line-height: 48px;
+  font-weight: 500;
   color: $black;
   @include bp(xs) {
     font-size: 20px;
     line-height: 27px;
-    }
+  }
 }
 
 .ticket-description {
   font-size: 16px;
   line-height: 24px;
+  font-weight: 500;
   color: $gray;
-
+  @include bp(xs) {
+    font-size: 14px;
+    line-height: 22px;
+  }
   * {
     &:last-child {
       margin-bottom: 0;
@@ -126,12 +136,10 @@
   @include bp(lg) {
     width: 100%;
     max-width: 500px;
-    }
+  }
   @include bp(xs) {
     padding: 36px 10px;
-
-    }
-
+  }
   .btn {
     width: 253px;
   }
@@ -143,19 +151,32 @@
   line-height: 32px;
   margin-bottom: 42px;
   color: $red;
+  @include bp(xs) {
+    margin-bottom: 32px;
+  }
 }
 
 .ticket-main__price {
+  display: flex;
+  align-items: baseline;
   font-weight: 700;
   font-size: 128px;
   line-height: 128px;
   color: $black;
-
+  margin-bottom: 36px;
+  @include bp(xs) {
+    font-size: 90px;
+    line-height: 90px;
+    margin-bottom: 24px;
+  }
   span {
     font-weight: 300;
     font-size: 70px;
-    line-height: 128px;
+    line-height: 1;
     color: $gray;
+    @include bp(xs) {
+      font-size: 45px;
+    }
   }
 }
 
@@ -165,6 +186,11 @@
   line-height: 24px;
   color: $gray;
   margin-bottom: 36px;
+  @include bp(xs) {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 24px;
+  }
 }
 
 .ticket-main__list {
@@ -173,11 +199,14 @@
   line-height: 32px;
   color: $gray;
   margin-bottom: 53px;
-
+  @include bp(xs) {
+    margin-bottom: 35px;
+    font-size: 18px;
+    line-height: 26px;
+  }
   li {
     display: flex;
     align-items: center;
-
     i {
       display: flex;
       align-items: center;
@@ -188,10 +217,18 @@
       border-radius: 50%;
       background-color: $red;
       margin-right: 24px;
+      @include bp(xs) {
+        width: 22px;
+        min-width: 22px;
+        height: 22px;
+        margin-right: 16px;
+      }
     }
-
     + li {
       margin-top: 16px;
+      @include bp(xs) {
+        margin-top: 12px;
+      }
     }
   }
 }

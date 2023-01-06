@@ -3,6 +3,9 @@
   @include bp(lg) {
     padding: 60px 0 140px;
   }
+  @include bp(xs) {
+    padding: 30px 0 60px;
+  }
 }
 
 .why-wrapper {
@@ -123,6 +126,7 @@
   margin-bottom: 16px;
   font-size: 32px;
   line-height: 48px;
+  font-weight: 500;
   color: #606060;
   transition: all ease-in-out 0.2s;
   @include bp(lg) {
@@ -133,18 +137,22 @@
     margin-bottom: 6px;
     font-size: 19px;
     line-height: 25px;
-    }
+  }
 }
 
 .why-description {
   font-size: 16px;
   line-height: 24px;
+  font-weight: 500;
   color: $gray;
   margin-bottom: 56px;
   @include bp(md) {
     margin-bottom: 35px;
   }
-
+  @include bp(xs) {
+    font-size: 14px;
+    line-height: 22px;
+  }
   * {
     &:last-child {
       margin-bottom: 0;

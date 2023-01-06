@@ -21,10 +21,17 @@ body {
   @include bp(md) {
     display: block;
   }
-
   &.menu-opened {
     @include bp(md) {
       overflow: hidden;
+    }
+    .mobile-menu__wrapper{
+      display: flex;
+    }
+    .header{
+      &.fixed{
+        box-shadow: none;
+      }
     }
   }
 }

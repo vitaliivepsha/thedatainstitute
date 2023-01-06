@@ -11,23 +11,13 @@ var $ = require('jquery');
 require('bootstrap-sass');
 
 // Modules
-//var Forms = require('_modules/forms');
-//var Popup = require('_modules/popup');
-//var LightGallery = require('_modules/lightgallery');
 var Slider = require('_modules/slider');
-//require('../node_modules/sumoselect/jquery.sumoselect.min');
-//require('../node_modules/ez-plus/src/jquery.ez-plus');
-//require('../node_modules/sweetalert2/dist/sweetalert2');
-//require('../node_modules/jquery-validation/dist/jquery.validate.min');
 
 // Stylesheet entrypoint
 require('_stylesheets/app.scss');
 
 // Are you ready?
 $(function () {
-    // new Forms();
-    // new Popup();
-    // new LightGallery();
     new Slider();
 
     setTimeout(function () {

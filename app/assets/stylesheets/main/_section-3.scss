@@ -1,35 +1,43 @@
 .speakers-section {
   background: #F9F9FB;
   padding-top: 156px;
-  padding-bottom: 136px;
+  padding-bottom: 184px;
   overflow: hidden;
   @include bp(sm) {
     padding-top: 50px;
   }
-
-
+  @include bp(xs) {
+    padding-bottom: 100px;
+  }
   & .speakers-arrows {
     position: absolute;
     bottom: -60px;
     display: none;
     gap: 30px;
-    width: 100%;
+    width: calc(100vw - 20px);
     justify-content: center;
     @include bp(md) {
       display: flex;
     }
-
+    @include bp(xs) {
+      bottom: -45px;
+    }
     & > div {
       cursor: pointer;
-
+      display: flex;
       &:hover {
         & svg path {
           stroke: $red;
         }
       }
+      svg{
+        @include bp(xs) {
+          width: 45px;
+          height: 45px;
+        }
+      }
     }
   }
-
   & .slick-slide {
     & .col-md-4 {
       @include bp(md) {
@@ -80,7 +88,6 @@
   z-index: 1;
   text-align: center;
   margin-bottom: 60px;
-
   .bordered-title {
     position: absolute;
     z-index: -1;
@@ -93,6 +100,9 @@
     }
     @include bp(xs) {
       top: -59px;
+    }
+    @include bp(xxs) {
+      font-size: 60px;
     }
   }
 }
@@ -217,7 +227,6 @@
   margin-top: 24px;
   padding-top: 24px;
   border-top: 2px solid #EEEEEE;
-
   > a {
     display: flex;
     align-items: center;
@@ -225,11 +234,12 @@
     width: 48px;
     height: 48px;
     margin-right: 20px;
-
+    @include bp(xs) {
+      margin-right: 15px;
+    }
     &:last-child {
       margin-right: 0;
     }
-
     &:hover {
       svg {
         .fill {
@@ -237,7 +247,6 @@
         }
       }
     }
-
     i {
       display: flex;
       align-items: center;
@@ -249,5 +258,3 @@
     }
   }
 }
-
-

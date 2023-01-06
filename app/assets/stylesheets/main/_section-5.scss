@@ -3,7 +3,7 @@
   padding-bottom: 100px;
   transition: all ease-in-out 0.2s;
   @include bp(xs) {
-    padding-top: 80px;
+    padding-top: 50px;
     padding-bottom: 50px;
   }
 }
@@ -16,7 +16,6 @@
   @include bp(md) {
     margin-bottom: 116px;
   }
-
   .bordered-title {
     position: absolute;
     z-index: -1;
@@ -29,11 +28,11 @@
 .event-item {
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1;
   @include bp(md) {
     flex-direction: column;
-
   }
-
   + .event-item {
     margin-top: 60px;
   }
@@ -63,7 +62,6 @@
   @include bp(md) {
     margin: 0 auto;
   }
-
   img {
     width: 100%;
     height: 100%;
@@ -112,23 +110,18 @@
   @include bp(md) {
     max-width: 100%;
   }
-
   li {
     display: flex;
-    justify-content: center;
     align-items: center;
-
     i {
       display: flex;
       width: 40px;
       min-width: 40px;
-
       svg {
         height: 24px;
         width: fit-content;
       }
     }
-
     + li {
       margin-top: 16px;
     }
@@ -151,7 +144,6 @@
     padding: 26px 14px;
     padding-bottom: 30px;
   }
-
   > svg {
     position: absolute;
     right: 36px;
@@ -162,14 +154,16 @@
       bottom: 26px;
       width: 55px;
       height: 55px;
-      }
+    }
   }
 }
 
 .event-item__top-info {
   display: flex;
   flex-wrap: wrap;
-
+  @include bp(xs) {
+    flex-direction: column;
+  }
   > span {
     display: flex;
     align-items: center;
@@ -181,8 +175,8 @@
     color: $gray;
     @include bp(xs) {
       margin-bottom: 10px;
-      }
-
+      margin-right: 0;
+    }
     svg {
       margin-right: 12px;
     }
@@ -210,23 +204,23 @@
   font-weight: 500;
   color: $gray;
   max-width: 1025px;
-
+  @include bp(xs) {
+    font-size: 14px;
+    line-height: 22px;
+  }
   * {
     &:last-child {
       margin-bottom: 0;
     }
   }
-
   p {
     margin-bottom: 24px;
   }
-
   ul {
     padding-left: 18px;
     list-style-type: disc;
     margin-bottom: 24px;
   }
-
   ol {
     padding-left: 18px;
     list-style-type: decimal;
@@ -241,14 +235,14 @@
   transition: all ease-in-out 0.2s;
   @include bp(xs) {
     display: block;
-
-    }
-
+  }
   .btn {
     width: 253px;
     margin-right: 64px;
+    @include bp(xs) {
+      width: 100%;
+    }
   }
-
   .link {
     position: relative;
     font-weight: 700;
@@ -258,9 +252,9 @@
     text-decoration: none;
     @include bp(xs) {
       display: block;
-      margin-top: 58px;
-      }
-
+      margin-top: 45px;
+      margin-left: 10px;
+    }
     &:after {
       width: calc(100% + 30px);
       height: calc(100% + 30px);

@@ -10,11 +10,17 @@
     height: 85px;
     padding: 15px 0;
   }
-
+  @include bp(xs) {
+    height: 60px;
+    padding: 10px 0;
+  }
+  @media only screen and (max-height: 499px){
+    height: 60px;
+    padding: 10px 0;
+  }
   &.fixed {
     box-shadow: 5px 5px 30px rgba(205, 201, 201, 0.25);
   }
-
   .container {
     display: flex;
     align-items: center;
@@ -37,7 +43,10 @@
   display: flex;
   width: 137px;
   height: 49px;
-
+  @media only screen and (max-width: 767px){
+    width: 110px;
+    height: 40px;
+  }
   img {
     width: 100%;
     height: 100%;
@@ -189,6 +198,15 @@
 
 .header-spacer {
   height: 104px;
+  @include bp(sm) {
+    height: 85px;
+  }
+  @include bp(xs) {
+    height: 60px;
+  }
+  @media only screen and (max-height: 499px){
+    height: 60px;
+  }
 }
 
 .mobile-menu__wrapper {
@@ -196,23 +214,41 @@
   width: 100%;
   position: fixed;
   background-color: $red;
-  top: 85px;
-  height: calc(100vh - 85px);
+  top: 104px;
+  height: calc(100vh - 104px);
   flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: space-between;
   padding: 40px 30px 30px;
   border-top: 1px solid #fff;
+  z-index: 10;
+  overflow: auto;
+  @include bp(sm) {
+    top: 85px;
+    height: calc(100vh - 85px);
+  }
   @include bp(xs) {
+    padding-top: 20px;
     top: 60px;
     height: calc(100vh - 60px);
   }
-
+  @media only screen and (max-height: 499px){
+    padding-top: 20px;
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
   .btn {
     margin: 30px auto 0;
-    width: 154px;
+    width: 253px;
+    min-height: 56px;
     background-color: #fff;
     color: $accent;
+    svg{
+      path{
+        stroke: $accent;
+      }
+    }
   }
 }
 
@@ -226,7 +262,16 @@
       font-weight: 700;
       font-size: 20px;
       line-height: 22px;
-
+      @include bp(xs) {
+        padding: 10px 15px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      @media only screen and (max-height: 499px){
+        padding: 10px 15px;
+        font-size: 16px;
+        line-height: 24px;
+      }
       &:hover {
         color: $accent;
       }
